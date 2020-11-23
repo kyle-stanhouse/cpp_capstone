@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ball_chaser</name>
+  <name>ball_chaser_OOP</name>
   <version>0.0.0</version>
-  <description>The ball_chaser package</description>
+  <description>The ball_chaser_OOP package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

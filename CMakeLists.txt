@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(ball_chaser)
+project(ball_chaser_OOP)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 add_compile_options(-std=c++11)
@@ -214,6 +214,6 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 #target_link_libraries(process_image ${catkin_LIBRARIES})
 #add_dependencies(process_image ball_chaser_generate_messages_cpp)
 
-#add_executable(process_image_OOP src/process_image_OOP.cpp)
-#target_link_libraries(process_image_OOP ${catkin_LIBRARIES})
-#add_dependencies(process_image_OOP ball_chaser_generate_messages_cpp)
+add_executable(process_image_OOP src/process_image_OOP.cpp)
+target_link_libraries(process_image_OOP ${catkin_LIBRARIES})
+add_dependencies(process_image_OOP ball_chaser_generate_messages_cpp)
