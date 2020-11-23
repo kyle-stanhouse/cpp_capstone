@@ -1,7 +1,7 @@
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
 //TODO: Include the ball_chaser "DriveToTarget" header file
-#include "ball_chaser/DriveToTarget.h"
+#include "ball_chaser_OOP/DriveToTarget.h"
 
 // ROS::Publisher motor commands;
 ros::Publisher motor_command_publisher;
@@ -9,8 +9,8 @@ ros::Publisher motor_command_publisher;
 // TODO: Create a handle_drive_request callback function that executes whenever a drive_bot service is requested
 // This function should publish the requested linear x and angular velocities to the robot wheel joints
 // After publishing the requested velocities, a message feedback should be returned with the requested wheel velocities
-bool handle_drive_request(ball_chaser::DriveToTarget::Request& req,
-    ball_chaser::DriveToTarget::Response& res)
+bool handle_drive_request(ball_chaser_OOP::DriveToTarget::Request& req,
+    ball_chaser_OOP::DriveToTarget::Response& res)
 {
 	ROS_INFO("Drive to Target request received - linear x:%1.2f, angular z:%1.2f", (float)req.linear_x, (float)req.angular_z);
 
@@ -54,7 +54,7 @@ int main(int argc, char** argv)
     motor_command_publisher = n.advertise<geometry_msgs::Twist>("/cmd_vel", 10);
 
     // TODO: Define a drive /ball_chaser/command_robot service with a handle_drive_request callback function
-    ros::ServiceServer service = n.advertiseService("/ball_chaser/command_robot", handle_drive_request);
+    ros::ServiceServer service = n.advertiseService("/ball_chaser_OOP/command_robot", handle_drive_request);
     	
 
     // TODO: Handle ROS communication events

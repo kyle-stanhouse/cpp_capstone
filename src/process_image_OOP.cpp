@@ -114,10 +114,10 @@ int main(int argc, char** argv)
 {
     // Initialize the process_image node and create a handle to it
     ros::init(argc, argv, "process_image");
-    ros::NodeHandle n;
+    ros::NodeHandle nh;
 
     // Create object
-    ProcessImage pi = ProcessImage(&n);
+    ProcessImage pi = ProcessImage(&nh);
 
     // Handle ROS communication events
     ros::spin();
