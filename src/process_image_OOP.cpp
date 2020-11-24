@@ -7,7 +7,7 @@ class ProcessImage{
 	private:
 
 	ros::ServiceClient client; // Define a global client that can request services
-	ros::Subscriber sub; // Subscribe to /camera/rgb/image_raw topic to read the image data inside the process_image_callback function
+	ros::Subscriber sub; // Subscriber for image topic
 
 	public:
 	
@@ -43,8 +43,6 @@ class ProcessImage{
 	    int white_pixel = 255;
 	    int white_pixel_idx;
 	    bool found_white_ball = false;
-	    int multx = 20;
-
 
 	    // TODO: Loop through each pixel in the image and check if there's a bright white one
 	    // Then, identify if this pixel falls in the left, mid, or right side of the image
@@ -73,20 +71,17 @@ class ProcessImage{
 
 			ROS_INFO_STREAM("Driving left");
 			//drive_robot(0.025*multx,0.1*multx); //drive left
-			drive_robot(0.0,0.2); //drive left
+			drive_robot(0.0,0.08); //drive left
 		} 
 		else if( ( (white_pixel_idx % img.step) >= fabs(img.step/3) ) && ( white_pixel_idx % img.step < fabs(img.step * 2/3) ) ){
 
 			ROS_INFO_STREAM("Driving forward");	    	
-			//drive_robot(0.025*multx,0.0); //drive forward
-			drive_robot(6.0,0.0); //drive forward
+			drive_robot(0.1,0.0); //drive forward
 		} 
 		else if( (white_pixel_idx % img.step) >= fabs(img.step*2/3) ){
 
 			ROS_INFO_STREAM("Driving right");		
-			//drive_robot(0.025,-0.1); //drive right
-			//drive_robot(0.025*multx,-.1*multx); //drive right
-			drive_robot(0.0,-0.2); //drive right
+			drive_robot(0.0,-0.08); //drive right
 		} 
 		else{
 
