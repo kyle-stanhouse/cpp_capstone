@@ -7,10 +7,10 @@ class BallChaser{
 
 	private:
 
+    	ros::ServiceServer service; // Service for receiving robot velocity commands
 	ros::ServiceClient client; // Define a service client for commanding robot velocity
 	ros::Subscriber sub; // Subscriber for image topic
 	ros::Publisher motor_command_publisher; // Publisher for motor commands
-    	ros::ServiceServer service; // Service for receiving robot velocity commands
 
 	public:
 	
