@@ -11,29 +11,29 @@ The following criteria/specifications from the Capstone rubric are met.
 **Criteria:** _The project uses Object Oriented Programming techniques._\
 **Meets Specifications:** _The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks._
 
-**Criteria:** Classes use appropriate access specifiers for class members.
+**Criteria:** Classes use appropriate access specifiers for class members.\
 **Meets Specifications:** All class data members are explicitly specified as public, protected, or private.
 
-**Criteria:** Class constructors utilize member initialization lists.
+**Criteria:** Class constructors utilize member initialization lists.\
 **Meets Specifications:** All class members that are set to argument values are initialized through member initialization lists.
 
-**Criteria:** Classes abstract implementation details from their interfaces.
+**Criteria:** Classes abstract implementation details from their interfaces.\
 **Meets Specifications:** All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
 
-**Criteria:** Classes encapsulate behavior.
+**Criteria:** Classes encapsulate behavior.\
 **Meets Specifications:** Appropriate data and functions are grouped into classes. Member data that is subject to an invariant is hidden from the user. State is accessed via member functions.
 
-**Criteria:** The project makes use of references in function declarations.
+**Criteria:** The project makes use of references in function declarations.\
 **Meets Specifications:** At least two variables are defined as references, or two functions use pass-by-reference in the project code.
 
 Possibly
-**Criteria:** The project uses destructors appropriately.
+**Criteria:** The project uses destructors appropriately.\
 **Meets Specifications:** At least one class that uses unmanaged dynamically allocated memory, along with any class that otherwise needs to modify state upon the termination of an object, uses a destructor.
 
-**Criteria:** The project uses smart pointers instead of raw pointers.
+**Criteria:** The project uses smart pointers instead of raw pointers.\
 **Meets Specifications:** The project uses at least one smart pointer: unique_ptr, shared_ptr, or weak_ptr. The project does not use raw pointers.
 
-**Criteria:** The project uses multithreading.
+**Criteria:** The project uses multithreading.\
 **Meets Specifications:** The project uses multiple threads in the execution.
 
 
