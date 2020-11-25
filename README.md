@@ -81,6 +81,12 @@ Meets Specifications: The project uses multiple threads in the execution.
   * Mac: same deal as make - [install Xcode command line tools]((https://developer.apple.com/xcode/features/)
   * Windows: recommend using [MinGW](http://www.mingw.org/)
   
+  ## Tips  
+1. It's recommended to update and upgrade your environment before running the code.  
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
+```
+  
 ## Install and run 
 
 * Create a `catkin_ws`
@@ -105,12 +111,6 @@ Open up terminal 2
 Observe the robot follow the ball as you move it around the gazebo world. 
 The robot will stop when the white ball is not in it's field of view.
 
- 
 
-## Tips  
-1. It's recommended to update and upgrade your environment before running the code.  
-```bash
-sudo apt-get update && sudo apt-get upgrade -y
-```
 
 
