@@ -8,7 +8,7 @@ The previously submitted 'GoChaseIt!' project can be found here: https://github.
 
 The following criteria/specifications from the Capstone rubric are met.
 
-**Criteria:** _The project uses Object Oriented Programming techniques._
+**Criteria:** _The project uses Object Oriented Programming techniques._\
 **Meets Specifications:** _The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks._
 
 **Criteria:** Classes use appropriate access specifiers for class members.
