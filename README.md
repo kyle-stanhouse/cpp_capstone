@@ -4,18 +4,19 @@ For completion of the C++ capstone project I have chosen to apply object oriente
 
 
 ## What is different
-The basic functionality of the application is unchanged, however node/service handling and callbacks have been structured in the class BallChaser. My previously submitted 'GoChaseIt!' project can be found here: https://github.com/kyle-stanhouse/GoChaseIt
+The basic functionality of the application is unchanged, however node/service handling and callbacks have been structured in the class BallChaser. 
+The previously submitted 'GoChaseIt!' project can be found here: https://github.com/kyle-stanhouse/GoChaseIt
 
 The following criteria/specifications from the Capstone rubric are met.
 
-Criteria: _The project uses Object Oriented Programming techniques._
-Meets Specifications: _The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks._
+**Criteria:** _The project uses Object Oriented Programming techniques._
+**Meets Specifications:** _The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks._
 
-Criteria: Classes use appropriate access specifiers for class members.
-Meets Specifications: All class data members are explicitly specified as public, protected, or private.
+**Criteria:** Classes use appropriate access specifiers for class members.
+**Meets Specifications:** All class data members are explicitly specified as public, protected, or private.
 
-Criteria: Class constructors utilize member initialization lists.
-Meets Specifications: All class members that are set to argument values are initialized through member initialization lists.
+**Criteria:** Class constructors utilize member initialization lists.
+**Meets Specifications:** All class members that are set to argument values are initialized through member initialization lists.
 
 Criteria: Classes abstract implementation details from their interfaces.
 Meets Specifications: All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
