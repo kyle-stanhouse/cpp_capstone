@@ -8,8 +8,8 @@ The basic functionality of the application is unchanged, however node/service ha
 
 The following criteria/specifications from the Capstone rubric are met.
 
-Criteria: The project uses Object Oriented Programming techniques.
-Meets Specifications: The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks.
+Criteria: _The project uses Object Oriented Programming techniques._
+Meets Specifications: _The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks._
 
 Criteria: Classes use appropriate access specifiers for class members.
 Meets Specifications: All class data members are explicitly specified as public, protected, or private.
