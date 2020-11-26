@@ -14,7 +14,6 @@ class DriveBot{
 	public:
 
 	// Constructor	
-	//DriveBot(ros::NodeHandle *nh){
 	DriveBot(ros::NodeHandle *nh, ros::NodeHandle *pnh) : nh_(nh), pnh_(pnh)
 	{
 
@@ -68,7 +67,6 @@ int main(int argc, char** argv)
     ros::NodeHandle pnh("~");
 
     // Create DriveBot object
-    //DriveBot db = DriveBot(&nh, &pnh);
     DriveBot db(&nh, &pnh);
 
     //Handle ROS communication events
