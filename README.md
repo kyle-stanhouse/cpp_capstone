@@ -7,7 +7,7 @@ The basic functionality of the application is unchanged, however node/service ha
 
 The previously submitted 'GoChaseIt!' project can be found here: https://github.com/kyle-stanhouse/GoChaseIt. The following project criteria addressed does not include tasks performed for the previous project.
 
-The following criteria/specifications from the Capstone rubric are met.
+**The following criteria/specifications from the Capstone rubric are met.**
 
 **Criteria:** _The project uses Object Oriented Programming techniques._\
 **Meets Specifications:** _The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks._
@@ -19,27 +19,27 @@ The following criteria/specifications from the Capstone rubric are met.
 
 **Criteria:** Class constructors utilize member initialization lists.\
 **Meets Specifications:** All class members that are set to argument values are initialized through member initialization lists.\
-**Explanation:** Don't do this yet
+**Explanation:** The public and private node handles are initialized in the constructor via a member initialization list.
 
 **Criteria:** Classes abstract implementation details from their interfaces.\
 **Meets Specifications:** All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.\
-**Explanation:** Member variables and functions are documented through comments.
+**Explanation:** Member variables and functions are documented through comments. There is however no 'interface' so to speak that allows a user to access or mutate data members. 
 
 **Criteria:** Classes encapsulate behavior.\
 **Meets Specifications:** Appropriate data and functions are grouped into classes. Member data that is subject to an invariant is hidden from the user. State is accessed via member functions.\
-**Explanation:** In my program the user only needs to initialize the node and create the node handle and is spared the rest of the details. There however aren't currently any accessors or mutators.
+**Explanation:** Encapsulation is perhaps the main benefit of applying object-oriented principles to the 'GoChaseIt!' project. The user only needs to initialize the node and create the node handle and is spared the rest of the details. There however aren't currently any accessors or mutators.
 
 **Criteria:** The project makes use of references in function declarations.\
 **Meets Specifications:** At least two variables are defined as references, or two functions use pass-by-reference in the project code.\
 **Explanation:** Nodehandles for the two processes are passed to the 2 classes by reference. Additionally, the _process_image_callback_ function accepts the camera image messages _img_ by reference.
 
-Potential criteria met\
+**Potential criteria met**
 
 **Criteria:** The project uses destructors appropriately.\
 **Meets Specifications:** At least one class that uses unmanaged dynamically allocated memory, along with any class that otherwise needs to modify state upon the termination of an object, uses a destructor.\
 **Explanation:** While there is currently no dynamically allocated memory, a destructor has been added for the ros::init() handler. `ctrl-c` can be used ostensibly to terminate the program, however in truth it doesn't happen immediately in the event that logging is employed.
 
-Have yet to implement ... \
+**Have yet to implement**
 
 **Criteria:** The project uses smart pointers instead of raw pointers.\
 **Meets Specifications:** The project uses at least one smart pointer: unique_ptr, shared_ptr, or weak_ptr. The project does not use raw pointers.\
