@@ -6,19 +6,29 @@ class ProcessImage{
 
 	private:
 
+	ros::NodeHandle* nh_; // public node handle
+	ros::NodeHandle* pnh_; // private node handle (for accessing parameter values, not currently used)
 	ros::ServiceClient client; // Define a global client that can request services
 	ros::Subscriber sub; // Subscriber for image topic
 
 	public:
 	
-	// Constructor	
-	ProcessImage(ros::NodeHandle *nh){
+	// Constructor
+	ProcessImage(ros::NodeHandle *nh, ros::NodeHandle *pnh) : nh_(nh), pnh_(pnh)	
+	{
 
     		// Define a client service capable of requesting services from command_robot
-    		client = nh->serviceClient<ball_chaser_OOP::DriveToTarget>("/ball_chaser_OOP/command_robot");
+    		client = nh_->serviceClient<ball_chaser_OOP::DriveToTarget>("/ball_chaser_OOP/command_robot");
 
     		// Subscribe to /camera/rgb/image_raw topic to read the image data inside the process_image_callback function
-    		sub = nh->subscribe("/camera/rgb/image_raw", 10, &ProcessImage::process_image_callback, this);
+    		sub = nh_->subscribe("/camera/rgb/image_raw", 10, &ProcessImage::process_image_callback, this);
+	}
+
+	//Destructor
+	~ProcessImage(){ 
+		
+		ros::shutdown(); 
+		ROS_INFO("Destructor called");
 	}
 
 	// This function calls the command_robot service to drive the robot in the specified direction
@@ -37,14 +47,14 @@ class ProcessImage{
 	}
 
 	// This callback function continuously executes and reads the image data
-	void process_image_callback(const sensor_msgs::Image img)
+	void process_image_callback(const sensor_msgs::Image &img)
 	{
 
 	    int white_pixel = 255;
 	    int white_pixel_idx;
 	    bool found_white_ball = false;
 
-	    // TODO: Loop through each pixel in the image and check if there's a bright white one
+	    // Loop through each pixel in the image and check if there's a bright white one
 	    // Then, identify if this pixel falls in the left, mid, or right side of the image
 	    // Depending on the white ball position, call the drive_bot function and pass velocities to it
 	    // Request a stop when there's no white ball seen by the camera
@@ -110,9 +120,10 @@ int main(int argc, char** argv)
     // Initialize the process_image node and create a handle to it
     ros::init(argc, argv, "process_image");
     ros::NodeHandle nh;
+    ros::NodeHandle pnh("~");
 
     // Create object
-    ProcessImage pi = ProcessImage(&nh);
+    ProcessImage pi(&nh, &pnh);
 
     // Handle ROS communication events
     ros::spin();
