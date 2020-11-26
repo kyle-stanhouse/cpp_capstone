@@ -1,6 +1,6 @@
 # C++ Capstone Project Description: Ball Chaser OOP
 
-For completion of the C++ capstone project I have chosen to apply object oriented principles (OOP) to the 'GoChaseIt!' project completed as a part of the 'Robotics Software Engineer' Nanodegree program. The 'GoChaseIt!' project called for the implementation of a ball chaser application in which a custom robot placed in a custom gazebo world detects and follows a white ball in it's field of view. The app employs 2 ROS nodes and 1 service (server and client) to achieve the necessary communication between the main process, the robot motor controller, and camera input used for detection. The manner in which these elements are implemented in the course project does not make use of object-oriented concepts that allow for abstraction and encapsulation, which is my capstone submission will rectify.
+For completion of the C++ capstone project I have chosen to apply object oriented principles (OOP) to the 'GoChaseIt!' project completed as a part of the 'Robotics Software Engineer' Nanodegree program. The 'GoChaseIt!' project called for the implementation of a ball chaser application in which a custom robot placed in a custom gazebo world detects and follows a white ball in it's field of view. The app employs 2 ROS nodes and 1 service (server and client) to achieve the necessary communication between the main process, the robot motor controller, and camera input used for detection. The manner in which these elements are implemented in the course project does not make use of various object-oriented princpiles, which is my capstone submission will attempt to rectify.
 
 ## What is different
 The basic functionality of the application is unchanged, however node/service handling and callbacks have been structured in classes ProcessImage and DriveBot class BallChaser. 
@@ -11,7 +11,7 @@ The previously submitted 'GoChaseIt!' project can be found here: https://github.
 
 **Criteria:** _The project uses Object Oriented Programming techniques._\
 **Meets Specifications:** _The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks._
-**Explanation:** There are now two classes that contain the necessary nodes, services, and callbacks, namely ProcessImage and DriveBot. Each contains class attributes and methods.
+**Explanation:** There are now two classes that contain the necessary nodes, services, and callbacks, namely ProcessImage and DriveBot. Each contains class attributes and methods and is separated into header and source files.
 
 **Criteria:** Classes use appropriate access specifiers for class members.\
 **Meets Specifications:** All class data members are explicitly specified as public, protected, or private.\
@@ -39,7 +39,7 @@ The previously submitted 'GoChaseIt!' project can be found here: https://github.
 **Meets Specifications:** At least one class that uses unmanaged dynamically allocated memory, along with any class that otherwise needs to modify state upon the termination of an object, uses a destructor.\
 **Explanation:** While there is currently no dynamically allocated memory, a destructor has been added for the ros::init() handler. `ctrl-c` can be used ostensibly to terminate the program, however in truth it doesn't happen immediately in the event that logging is employed.
 
-**Have yet to implement**
+**Have yet to implement, don't plan on it for this submission**
 
 **Criteria:** The project uses smart pointers instead of raw pointers.\
 **Meets Specifications:** The project uses at least one smart pointer: unique_ptr, shared_ptr, or weak_ptr. The project does not use raw pointers.\
@@ -67,12 +67,16 @@ The previously submitted 'GoChaseIt!' project can be found here: https://github.
     │   │   ├── ball_chaser_world.world
     │   ├── CMakeLists.txt             # compiler instructions
     │   ├── package.xml                # package info
-    ├── ball_chaser                    # ball_chaser package                   
+    ├── ball_chaser                    # ball_chaser package     
+    │   ├── include
+    │   │   ├── ball_chaser_OOP
+    │   │   │   ├── ProcessImage.h
+    │   │   │   ├── DriveBot.h
     │   ├── launch                     # launch folder for launch files   
-    │   │   ├── ball_chaser_OOP.launch
+    │   │   ├── ball_chaser_oop.launch
     │   ├── src                        # source folder for C++ scripts
     │   │   ├── drive_bot.cpp
-    │   │   ├── process_images_OOP.cpp
+    │   │   ├── process_images_oop.cpp
     │   ├── srv                        # service folder for ROS services
     │   │   ├── DriveToTarget.srv
     │   ├── CMakeLists.txt             # compiler instructions
