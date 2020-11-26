@@ -3,38 +3,51 @@
 For completion of the C++ capstone project I have chosen to apply object oriented principles (OOP) to the 'GoChaseIt!' project completed as a part of the 'Robotics Software Engineer' Nanodegree program. The 'GoChaseIt!' project called for the implementation of a ball chaser application in which a custom robot placed in a custom gazebo world detects and follows a white ball in it's field of view. The app employs 2 ROS nodes and 1 service (server and client) to achieve the necessary communication between the main process, the robot motor controller, and camera input used for detection. The manner in which these elements are implemented in the course project does not make use of object-oriented concepts that allow for abstraction and encapsulation, which is my capstone submission will rectify.
 
 ## What is different
-The basic functionality of the application is unchanged, however node/service handling and callbacks have been structured in the class BallChaser. 
-The previously submitted 'GoChaseIt!' project can be found here: https://github.com/kyle-stanhouse/GoChaseIt
+The basic functionality of the application is unchanged, however node/service handling and callbacks have been structured in classes ProcessImage and DriveBot class BallChaser. 
+
+The previously submitted 'GoChaseIt!' project can be found here: https://github.com/kyle-stanhouse/GoChaseIt. The following project criteria addressed does not include tasks performed for the previous project.
 
 The following criteria/specifications from the Capstone rubric are met.
 
 **Criteria:** _The project uses Object Oriented Programming techniques._\
 **Meets Specifications:** _The project code is organized into classes with class attributes to hold the data, and class methods to perform tasks._
+**Explanation:** There are now two classes that contain the necessary nodes, services, and callbacks, namely ProcessImage and DriveBot. Each contains class attributes and methods.
 
 **Criteria:** Classes use appropriate access specifiers for class members.\
-**Meets Specifications:** All class data members are explicitly specified as public, protected, or private.
+**Meets Specifications:** All class data members are explicitly specified as public, protected, or private.\
+**Explanation:** There are private and public data members specified.
 
 **Criteria:** Class constructors utilize member initialization lists.\
-**Meets Specifications:** All class members that are set to argument values are initialized through member initialization lists.
+**Meets Specifications:** All class members that are set to argument values are initialized through member initialization lists.\
+**Explanation:** Don't do this yet
 
 **Criteria:** Classes abstract implementation details from their interfaces.\
-**Meets Specifications:** All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.
+**Meets Specifications:** All class member functions document their effects, either through function names, comments, or formal documentation. Member functions do not change program state in undocumented ways.\
+**Explanation:** Member variables and functions are documented through comments.
 
 **Criteria:** Classes encapsulate behavior.\
-**Meets Specifications:** Appropriate data and functions are grouped into classes. Member data that is subject to an invariant is hidden from the user. State is accessed via member functions.
+**Meets Specifications:** Appropriate data and functions are grouped into classes. Member data that is subject to an invariant is hidden from the user. State is accessed via member functions.\
+**Explanation:** In my program the user only needs to initialize the node and create the node handle and is spared the rest of the details. There however aren't currently any accessors or mutators.
 
 **Criteria:** The project makes use of references in function declarations.\
-**Meets Specifications:** At least two variables are defined as references, or two functions use pass-by-reference in the project code.
+**Meets Specifications:** At least two variables are defined as references, or two functions use pass-by-reference in the project code.\
+**Explanation:** Nodehandles for the two processes are passed to the 2 classes by reference. Additionally, the _process_image_callback_ function accepts the camera image messages _img_ by reference.
 
-Possibly
+Potential criteria met\
+
 **Criteria:** The project uses destructors appropriately.\
-**Meets Specifications:** At least one class that uses unmanaged dynamically allocated memory, along with any class that otherwise needs to modify state upon the termination of an object, uses a destructor.
+**Meets Specifications:** At least one class that uses unmanaged dynamically allocated memory, along with any class that otherwise needs to modify state upon the termination of an object, uses a destructor.\
+**Explanation:** While there is currently no dynamically allocated memory, a destructor has been added for the ros::init() handler. `ctrl-c` can be used ostensibly to terminate the program, however in truth it doesn't happen immediately in the event that logging is employed.
+
+Have yet to implement ... \
 
 **Criteria:** The project uses smart pointers instead of raw pointers.\
-**Meets Specifications:** The project uses at least one smart pointer: unique_ptr, shared_ptr, or weak_ptr. The project does not use raw pointers.
+**Meets Specifications:** The project uses at least one smart pointer: unique_ptr, shared_ptr, or weak_ptr. The project does not use raw pointers.\
+**Explanation:**
 
 **Criteria:** The project uses multithreading.\
 **Meets Specifications:** The project uses multiple threads in the execution.
+**Explanation:**
 
 
 ## Directory Structure
