@@ -89,6 +89,7 @@ The previously submitted 'GoChaseIt!' project can be found here: https://github.
 ## Dependencies 
 * Gazebo >= 7.0  
 * ROS Kinetic  
+    Install instructions: http://wiki.ros.org/kinetic/Installation/Ubuntu
 * make >= 4.1(mac, linux), 3.81(Windows)
   * Linux: make is installed by default on most Linux distros
   * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
